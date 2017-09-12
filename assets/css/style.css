@@ -1,0 +1,27 @@
+#game {
+	background-color: black;
+	color: white;
+	font-family: "Apple Chancery", cursive;
+	margin: auto;
+}
+
+#images {
+	display: block;
+	border: 1px solid white;
+	margin: auto;
+	width: 70%;
+}
+
+#instruction {
+	font-family: "FreeMono", monospace;
+	font-size: 30px;
+	text-indent: 20px;
+}
+
+#initial {
+	text-indent: 40px;
+}
+
+#wrong-one {
+	text-indent: 40px;
+}
