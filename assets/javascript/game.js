@@ -5,10 +5,10 @@ var wrong = [];
 var wins = 0;
 var loses = 0;
 
-var guessesLeft = 8;
+var guessesLeft = 13;
 var userGeuss = null;
 
-
+var winsval = document.getElementById("number");
 
 
 var randomPick = things[Math.floor(Math.random() * things.length)];
@@ -18,7 +18,7 @@ function initialScreen() {
     blanks = [];
     wrong = [];
     randomPick = things[Math.floor(Math.random() * things.length)];
-    wins = 0;
+    
     guessesLeft = 8;
 
     var getStarted = '<img src = "assets/images/gameofthrone.jpg" width="800" height="400" id="images">' + "<p><h3>Press any key to get started!</h3></p>";
@@ -46,7 +46,7 @@ document.onkeyup = function(event) {
 
         if (guessesLeft <= 0) {
             console.log("You Lost");
-            guessesLeft = 8;
+            guessesLeft = 13;
             initialScreen();
         }
 
@@ -62,6 +62,7 @@ document.onkeyup = function(event) {
                 if (blanksJoin === randomPick) {
                     wins++;
                     console.log("You Win");
+                    winsval.innerHTML = wins;
                     initialScreen();
                 }
             }
@@ -69,7 +70,7 @@ document.onkeyup = function(event) {
     }
     blanksJoin = blanks.join("");
     var html2 = "<p><h4>Wins: " + wins + "</h4></p>" +
-        "<p><h4>Current Words:      " + blanksJoin + "</h4></p>" + "<p><h4>Number of Guesses Remaining: " +
+        "<p><h4>Current Words: " + blanksJoin + "</h4></p>" + "<p><h4>Number of Guesses Remaining: " +
         guessesLeft + "</h4></p>" + "<p><h4>Letters Already Geussed: "; 
 
     var guessessSoFar = wrong.join("")
